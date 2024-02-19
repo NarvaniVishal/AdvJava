@@ -12,8 +12,8 @@ import javax.swing.JTextField;
 
 public class AddStudentDataFrame extends JFrame {
 	
-	JTextField txtName,txtMarksJava,txtMarksSL;
-	JButton btnSave,btnNext;
+	JTextField txtName,txtMarksJava,txtMarksSL,txtSearch;
+	JButton btnSave,btnSearch;
 	JLabel lblMsg;
 	ArrayList<Student> arrListStus;
 	
@@ -22,15 +22,17 @@ public class AddStudentDataFrame extends JFrame {
 		txtName =  new JTextField(10);
 		txtMarksJava = new JTextField(10);
 		txtMarksSL =  new JTextField(10);
+		txtSearch =  new JTextField(10);
 		btnSave = new JButton("Save");
-		btnNext = new JButton("Next");
+		btnSearch = new JButton("Search");
 		lblMsg = new JLabel();
 		arrListStus = new ArrayList<Student>();
 		add(txtName);
 		add(txtMarksJava);
 		add(txtMarksSL);
 		add(btnSave);
-		add(btnNext);
+		add(txtSearch);
+		add(btnSearch);
 		add(lblMsg);
 		lblMsg.setForeground(Color.red);
 		btnSave.addActionListener(new ActionListener() {
@@ -54,7 +56,23 @@ public class AddStudentDataFrame extends JFrame {
 				lblMsg.setText("Total Students : " + arrListStus.size());
 				
 				
-				
+			
+			}
+		});
+		
+		btnSearch.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String strSearch = txtSearch.getText();
+				for (Student student : arrListStus) {
+					if(student.name.equals(strSearch))
+					{
+						lblMsg.setText(student.getPercentage()+"");
+						break;
+					}
+				}
 			}
 		});
 		// TODO Auto-generated constructor stub
