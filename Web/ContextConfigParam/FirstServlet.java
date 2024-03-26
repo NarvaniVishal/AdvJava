@@ -33,9 +33,7 @@ public class FirstServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		HttpSession session = request.getSession();
-		session.setAttribute("demo", 1);
-		int a = (int)session.getAttribute("demo");
+		
 		
 		String username = getServletConfig().getInitParameter("username");
 		String password = getServletContext().getInitParameter("password");
