@@ -1,0 +1,4 @@
+https://www.tutorialspoint.com/servlets/servlets-server-response.htm
+
+
+https://www.tutorialspoint.com/servlets/servlets-client-request.htm

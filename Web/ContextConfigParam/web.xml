@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>MyJavaWebApp</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+
+	<servlet>
+		<description></description>
+		<display-name>FirstServlet</display-name>
+		<servlet-name>FirstServlet</servlet-name>
+		<servlet-class>demo.FirstServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FirstServlet</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>SecondServlet</display-name>
+		<servlet-name>SecondServlet</servlet-name>
+		<servlet-class>demo.SecondServlet</servlet-class>
+		<init-param>
+			<param-name>username</param-name>
+			<param-value>admin</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SecondServlet</servlet-name>
+		<url-pattern>/Signup</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>password</param-name>
+		<param-value>123</param-value>
+
+	</context-param>
+</web-app>
+
+
+
+
+
+
